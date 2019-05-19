@@ -52,6 +52,7 @@
 #include <SFML/Graphics.hpp>
 #include <time.h>
 #include <string>
+#include "object.h"
 using namespace sf;
 
 enum directions {down, left, right, up};
@@ -67,30 +68,11 @@ int score = 0;
 // Direction and snake starting lenght
 int dir,num=4;
 
-class Object{
-public:
-    int x,y;
-    Sprite sprite;
-    
-    virtual void draw() = 0;
-};
+//  Initializing snake and candy
+Snake s[600];
+Candy c;
 
 
-
-
-
-
-// Snake, d - direction
-class Snake {
-public:
-    int x,y,d;
-} s[600];
-
-// Candy
-class Candy {
-public:
-    int x,y;
-} c;
 
 // Create a graphical text to display
 Font font;
