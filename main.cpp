@@ -28,15 +28,16 @@
 //     + add music
 //     + set game icon
 //     + remake main to have bool isRunning
+//      shared pointer to sprites snake body
 //  Add project objectives:
 //      Funkcje wirtualne - klasa obiekt dla płytek z funk draw
 //      Dziedziczenie - klasa główna obiekt, dziedziczące- tło, snake, candy
-//     + Wyjątki - może przechodzenie przez ściany, albo candy w snake'u
+//      Wyjątki - może przechodzenie przez ściany, albo candy w snake'u, throw klase specjalną, może być pusta
 //
-//BUGS/GLITCHES:
+// BUGS/GLITCHES:
 //     + candy can spawn in snake
 //     + candy won't spawn at all (with small maps)
-//     ? snake can move inside itself
+//     + snake can move inside itself
 
 
 
@@ -63,7 +64,7 @@ using namespace sf;
 //  Initializing snake and candy
 Snake s[600];
 Candy c;
-
+Background bg;
 
 
 
@@ -159,7 +160,6 @@ int main()
     srand(time(0));
     
     // Set the Icon
-    
     if (!icon.loadFromFile(resourcePath() + "snake.png")) {
         return EXIT_FAILURE;
     }
@@ -189,7 +189,8 @@ int main()
     t3.loadFromFile(resourcePath() + "candy.png");
     t4.loadFromFile(resourcePath() + "snake_corner.png");
     
-    Sprite sprite1(t1);
+    //Sprite sprite1(t1);
+    bg.sprite = Sprite (t1);
     //Sprite sprite22(t22);
     Sprite sprite21(t21);
     Sprite sprite23(t23);
@@ -228,18 +229,19 @@ int main()
             }
         }
         if (isRunning) {
-            
+            int tempdir;
             if ((Keyboard::isKeyPressed(Keyboard::Left) || Keyboard::isKeyPressed(Keyboard::A)) && dir!=right)
-                dir=left;
+                tempdir=left;
             if ((Keyboard::isKeyPressed(Keyboard::Right) || Keyboard::isKeyPressed(Keyboard::D)) && dir!=left)
-                dir=right;
+                tempdir=right;
             if ((Keyboard::isKeyPressed(Keyboard::Up) || Keyboard::isKeyPressed(Keyboard::W)) && dir!=down)
-                dir=up;
+                tempdir=up;
             if ((Keyboard::isKeyPressed(Keyboard::Down) || Keyboard::isKeyPressed(Keyboard::S)) && dir!=up)
-                dir=down;
+                tempdir=down;
         
             if (timer>delay) {
                 timer=0;
+                dir=tempdir;
                 Move();
             }
         }
@@ -247,10 +249,7 @@ int main()
         //  Drawing snake
         window.clear();
         
-        for (int i=0; i<N; i++)
-            for (int j=0; j<M; j++)
-            { sprite1.setPosition(i*SIZE,j*SIZE);
-                window.draw(sprite1); }
+        bg.draw();
         
         for (int i=0;i<num;i++){
 

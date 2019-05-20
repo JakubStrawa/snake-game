@@ -29,6 +29,7 @@ public:
 class Snake : public Object {
 public:
     int d;
+    sf::Sprite corner;
     
     void draw(){
         sprite.setPosition(x*SIZE,  y*SIZE);
@@ -42,6 +43,18 @@ public:
     void draw(){
         sprite.setPosition(x*SIZE,  y*SIZE);
         window.draw(sprite);
+    }
+};
+
+// Background
+class Background : public Object {
+public:
+    void draw(){
+        for (int i=0; i<N; i++)
+            for (int j=0; j<M; j++){
+                sprite.setPosition(i*SIZE,  j*SIZE);
+                window.draw(sprite);
+            }
     }
 };
 
