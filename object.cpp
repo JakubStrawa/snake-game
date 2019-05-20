@@ -6,5 +6,3 @@
 //  Copyright © 2019 Jakub Strawa. All rights reserved.
 //
 
-#include <stdio.h>
-#include "object.h"

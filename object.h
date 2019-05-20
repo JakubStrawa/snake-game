@@ -8,7 +8,13 @@
 
 #ifndef object_h
 #define object_h
+#include "ResourcePath.hpp"
 #include <SFML/Graphics.hpp>
+#include "constants.h"
+
+
+
+
 
 
 class Object{
@@ -20,15 +26,23 @@ public:
 };
 
 // Snake, d - direction
-class Snake {
+class Snake : public Object {
 public:
-    int x,y,d;
+    int d;
+    
+    void draw(){
+        sprite.setPosition(x*SIZE,  y*SIZE);
+        window.draw(sprite);
+    }
 };
 
 // Candy
-class Candy {
+class Candy : public Object {
 public:
-    int x,y;
+    void draw(){
+        sprite.setPosition(x*SIZE,  y*SIZE);
+        window.draw(sprite);
+    }
 };
 
 #endif /* object_h */

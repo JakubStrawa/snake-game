@@ -53,20 +53,12 @@
 #include <time.h>
 #include <string>
 #include "object.h"
+#include "constants.h"
 using namespace sf;
 
-enum directions {down, left, right, up};
 
-// width and height, size of textures
-int N=30,M=20;
-int size=32;
-int w = size*N;
-int h = size*M;
-bool isRunning=false;
-int score = 0;
 
-// Direction and snake starting lenght
-int dir,num=4;
+
 
 //  Initializing snake and candy
 Snake s[600];
@@ -74,11 +66,7 @@ Candy c;
 
 
 
-// Create a graphical text to display
-Font font;
 
-// Set the Window
-RenderWindow window(VideoMode(w, h), "Snake Game");
 
 //  checks if candy spawn position is outside snake
 bool checkCandyPos(){
@@ -89,6 +77,7 @@ bool checkCandyPos(){
     }
     return true;
 }
+
 
 void Move()
 {
@@ -152,7 +141,7 @@ void Move()
         }
     }
     
-
+    
     
     //  Snake eating itself
     for (int i=1;i<num;i++){
@@ -160,22 +149,17 @@ void Move()
             isRunning=false;
         }
     }
-            
+    
 }
 
 
-//  int to string converter
-std::string convert (int score){
-    std::string s_score = std::to_string(score);
-    return s_score;
-}
 
 int main()
 {
     srand(time(0));
     
     // Set the Icon
-    Image icon;
+    
     if (!icon.loadFromFile(resourcePath() + "snake.png")) {
         return EXIT_FAILURE;
     }
@@ -210,7 +194,8 @@ int main()
     Sprite sprite21(t21);
     Sprite sprite23(t23);
     Sprite sprite24(t24);
-    Sprite sprite3(t3);
+    c.sprite = Sprite (t3);
+    //Sprite sprite3(t3);
     Sprite sprite4(t4);
     
     // Set the Clock
@@ -264,7 +249,7 @@ int main()
         
         for (int i=0; i<N; i++)
             for (int j=0; j<M; j++)
-            { sprite1.setPosition(i*size,j*size);
+            { sprite1.setPosition(i*SIZE,j*SIZE);
                 window.draw(sprite1); }
         
         for (int i=0;i<num;i++){
@@ -273,15 +258,15 @@ int main()
             if (i==0) {
                 if (s[i].d==left) {
                     sprite23.setRotation(90);
-                    sprite23.setPosition((s[i].x+1)*size, s[i].y*size);
+                    sprite23.setPosition((s[i].x+1)*SIZE, s[i].y*SIZE);
                 } else if (s[i].d==right) {
                     sprite23.setRotation(270);
-                    sprite23.setPosition(s[i].x*size, (s[i].y+1)*size);
+                    sprite23.setPosition(s[i].x*SIZE, (s[i].y+1)*SIZE);
                 } else if (s[i].d==up) {
                     sprite23.setRotation(180);
-                    sprite23.setPosition((s[i].x+1)*size, (s[i].y+1)*size);
+                    sprite23.setPosition((s[i].x+1)*SIZE, (s[i].y+1)*SIZE);
                 } else if (s[i].d==down) {
-                    sprite23.setPosition(s[i].x*size, s[i].y*size);
+                    sprite23.setPosition(s[i].x*SIZE, s[i].y*SIZE);
                 }
                 window.draw(sprite23);
                 sprite23.setRotation(0);
@@ -292,15 +277,15 @@ int main()
                 s[i].d = s[i-1].d;
                 if (s[i].d==left) {
                     sprite24.setRotation(90);
-                    sprite24.setPosition((s[i].x+1)*size, s[i].y*size);
+                    sprite24.setPosition((s[i].x+1)*SIZE, s[i].y*SIZE);
                 } else if (s[i].d==right) {
                     sprite24.setRotation(270);
-                    sprite24.setPosition(s[i].x*size, (s[i].y+1)*size);
+                    sprite24.setPosition(s[i].x*SIZE, (s[i].y+1)*SIZE);
                 } else if (s[i].d==up) {
                     sprite24.setRotation(180);
-                    sprite24.setPosition((s[i].x+1)*size, (s[i].y+1)*size);
+                    sprite24.setPosition((s[i].x+1)*SIZE, (s[i].y+1)*SIZE);
                 } else if (s[i].d==down) {
-                    sprite24.setPosition(s[i].x*size, s[i].y*size);
+                    sprite24.setPosition(s[i].x*SIZE, s[i].y*SIZE);
                 }
                 window.draw(sprite24);
                 sprite24.setRotation(0);
@@ -310,25 +295,25 @@ int main()
             else if (s[i].d == left || s[i].d == right) {
                 if (s[i].d == left && s[i-1].d == down) {
                     sprite4.setRotation(270);
-                    sprite4.setPosition(s[i].x*size, (s[i].y+1)*size);
+                    sprite4.setPosition(s[i].x*SIZE, (s[i].y+1)*SIZE);
                     window.draw(sprite4);
 
                 } else if (s[i].d == left && s[i-1].d == up) {
                     sprite4.setRotation(180);
-                    sprite4.setPosition((s[i].x+1)*size, (s[i].y+1)*size);
+                    sprite4.setPosition((s[i].x+1)*SIZE, (s[i].y+1)*SIZE);
                     window.draw(sprite4);
                 } else if (s[i].d == right && s[i-1].d == down) {
-                    sprite4.setPosition((s[i].x)*size, (s[i].y)*size);
+                    sprite4.setPosition((s[i].x)*SIZE, (s[i].y)*SIZE);
                     window.draw(sprite4);
 
                 } else if (s[i].d == right && s[i-1].d == up) {
                     sprite4.setRotation(90);
-                    sprite4.setPosition((s[i].x+1)*size, (s[i].y)*size);
+                    sprite4.setPosition((s[i].x+1)*SIZE, (s[i].y)*SIZE);
                     window.draw(sprite4);
 
                } else {
                 sprite21.setRotation(90);
-                sprite21.setPosition((s[i].x+1)*size, (s[i].y)*size);
+                sprite21.setPosition((s[i].x+1)*SIZE, (s[i].y)*SIZE);
                 window.draw(sprite21);
                 sprite21.setRotation(0);
                 }
@@ -339,32 +324,32 @@ int main()
             else if (s[i].d == down || s[i].d == up) {
                 if (s[i].d == down && s[i-1].d == left) {
                     sprite4.setRotation(90);
-                    sprite4.setPosition((s[i].x+1)*size, (s[i].y)*size);
+                    sprite4.setPosition((s[i].x+1)*SIZE, (s[i].y)*SIZE);
                     window.draw(sprite4);
 
                 } else if (s[i].d == down && s[i-1].d == right) {
                     sprite4.setRotation(180);
-                    sprite4.setPosition((s[i].x+1)*size, (s[i].y+1)*size);
+                    sprite4.setPosition((s[i].x+1)*SIZE, (s[i].y+1)*SIZE);
                     window.draw(sprite4);
                 } else if (s[i].d == up && s[i-1].d == left) {
-                    sprite4.setPosition((s[i].x)*size, (s[i].y)*size);
+                    sprite4.setPosition((s[i].x)*SIZE, (s[i].y)*SIZE);
                     window.draw(sprite4);
 
                 } else if (s[i].d == up && s[i-1].d == right) {
                     sprite4.setRotation(270);
-                    sprite4.setPosition(s[i].x*size, (s[i].y+1)*size);
+                    sprite4.setPosition(s[i].x*SIZE, (s[i].y+1)*SIZE);
                     window.draw(sprite4);
 
                 } else {
-                sprite21.setPosition((s[i].x)*size, s[i].y*size);
+                sprite21.setPosition((s[i].x)*SIZE, s[i].y*SIZE);
                 window.draw(sprite21);
                 }
             }
             sprite4.setRotation(0);
         }
-        
-        sprite3.setPosition(c.x*size,  c.y*size);
-        window.draw(sprite3);
+        c.draw();
+        //c.sprite.setPosition(c.x*SIZE,  c.y*SIZE);
+        //window.draw(c.sprite);
         
         Text text("Score: " + convert(score), font, 30);
         text.setFillColor(Color::Black);
