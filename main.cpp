@@ -174,6 +174,10 @@ int main()
     if (!music.openFromFile(resourcePath() + "Undertale - Megalovania.ogg")) {
         return EXIT_FAILURE;
     }
+    Music exit_music;
+    if(!exit_music.openFromFile(resourcePath() + "mario.ogg")){
+        return EXIT_FAILURE;
+    }
     
     // Play the music
     music.play();
@@ -358,6 +362,8 @@ int main()
         
         if (!isRunning) {
             music.pause();
+            
+            exit_music.play();
             Text exitText("Game Over!", font, 50);
             exitText.setPosition(144, 214);
             exitText.setCharacterSize(128);

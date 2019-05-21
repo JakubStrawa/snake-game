@@ -18,9 +18,9 @@ enum directions {down, left, right, up};
 
 
 // width and height, size of textures
-int N=30,M=20;
-int w = SIZE*N;
-int h = SIZE*M;
+const int N=30,M=20;
+const int w = SIZE*N;
+const int h = SIZE*M;
 bool isRunning=false;
 int score = 0;
 
