@@ -31,11 +31,15 @@ public:
     int d;
     sf::Sprite corner;
     
+   
+    
     void draw(){
         sprite.setPosition(x*SIZE,  y*SIZE);
         window.draw(sprite);
     }
-};
+    
+    
+}s[600];
 
 // Candy
 class Candy : public Object {
@@ -44,7 +48,11 @@ public:
         sprite.setPosition(x*SIZE,  y*SIZE);
         window.draw(sprite);
     }
-};
+    void spawnFirst(){
+        x=2;
+        y=2;
+    }
+}c;
 
 // Background
 class Background : public Object {
@@ -56,6 +64,6 @@ public:
                 window.draw(sprite);
             }
     }
-};
+}bg;
 
 #endif /* object_h */

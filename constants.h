@@ -13,6 +13,7 @@
 #include "object.h"
 #define SIZE 32
 
+
 enum directions {down, left, right, up};
 
 
@@ -24,8 +25,8 @@ int h = SIZE*M;
 bool isRunning=false;
 int score = 0;
 
-// Direction and snake starting lenght
-int dir,num=4;
+// Direction
+int dir, num=4;
 
 // Set the Window
 sf::RenderWindow window(sf::VideoMode(w, h), "Snake Game");
@@ -36,11 +37,12 @@ sf::Font font;
 sf::Image icon;
 
 
-
 //  int to string converter
 std::string convert (int score){
     std::string s_score = std::to_string(score);
     return s_score;
 }
+
+
 
 #endif /* constants_h */
