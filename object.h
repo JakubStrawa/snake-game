@@ -8,9 +8,10 @@
 
 #ifndef object_h
 #define object_h
-#include "ResourcePath.hpp"
 #include <SFML/Graphics.hpp>
-#include "constants.h"
+#include "functions.h"
+
+
 
 
 
@@ -21,25 +22,20 @@ class Object{
 public:
     int x,y;
     sf::Sprite sprite;
+    Object() : x(0), y(0) {};
     
     virtual void draw() = 0;
 };
 
 // Snake, d - direction
-class Snake : public Object {
+class Snake {
 public:
-    int d;
-    sf::Sprite corner;
+    int x,y,d;
     
-   
-    
-    void draw(){
-        sprite.setPosition(x*SIZE,  y*SIZE);
-        window.draw(sprite);
-    }
+    Snake() : x(0), y(0), d(0) {};
     
     
-}s[600];
+};
 
 // Candy
 class Candy : public Object {
@@ -52,7 +48,7 @@ public:
         x=2;
         y=2;
     }
-}c;
+};
 
 // Background
 class Background : public Object {
@@ -64,6 +60,6 @@ public:
                 window.draw(sprite);
             }
     }
-}bg;
+};
 
 #endif /* object_h */

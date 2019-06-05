@@ -10,7 +10,6 @@
 #define constants_h
 #include "ResourcePath.hpp"
 #include <SFML/Graphics.hpp>
-#include "object.h"
 #define SIZE 32
 
 
@@ -22,11 +21,16 @@ enum directions {down, left, right, up};
 int N=30,M=20;
 int w = SIZE*N;
 int h = SIZE*M;
-bool isRunning=false;
+bool isRunning=true;
+bool gameWin=false;
 int score = 0;
 
-// Direction
-int dir, num=4;
+// Clock timer and delay between frames
+float timer=0, delay=0.1;
+
+// Bool to play exit music
+bool playEndMusic = false;
+
 
 // Set the Window
 sf::RenderWindow window(sf::VideoMode(w, h), "Snake Game");
@@ -42,7 +46,6 @@ std::string convert (int score){
     std::string s_score = std::to_string(score);
     return s_score;
 }
-
 
 
 #endif /* constants_h */
