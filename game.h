@@ -9,16 +9,16 @@
 #ifndef game_h
 #define game_h
 
-#include "ResourcePath.hpp"
 #include <SFML/Graphics.hpp>
 #include "object.h"
 #include "exception.h"
 using namespace sf;
 
 class Game{
-public:
+private:
     int dir=0;
     int num;
+public:
     Snake s[600];
     Texture t_bg,t_candy,t_s_body,t_s_head,t_s_tail,t_s_corner;
     Candy c;
@@ -28,13 +28,29 @@ public:
     Game() : dir(0), num(4) {};
     ~Game()=default;
     
+    int getDir(){
+        return dir;
+    }
+    int getNum(){
+        return num;
+    }
+    void setDir(int x){
+        dir = x;
+    }
+    void setNum(int x){
+        num = x;
+    }
+    void increaseNum(){
+        ++num;
+    }
+    
     void setTextures(){
-        t_bg.loadFromFile(resourcePath() + "white_clean.png");
-        t_s_body.loadFromFile(resourcePath() + "green.png");
-        t_s_head.loadFromFile(resourcePath() + "snake_head.png");
-        t_s_tail.loadFromFile(resourcePath() + "snake_tail.png");
-        t_candy.loadFromFile(resourcePath() + "candy.png");
-        t_s_corner.loadFromFile(resourcePath() + "snake_corner.png");
+        t_bg.loadFromFile("Resources/white_clean.png");
+        t_s_body.loadFromFile("Resources/green.png");
+        t_s_head.loadFromFile("Resources/snake_head.png");
+        t_s_tail.loadFromFile("Resources/snake_tail.png");
+        t_candy.loadFromFile("Resources/candy.png");
+        t_s_corner.loadFromFile("Resources/snake_corner.png");
     }
     
     void setSprites(){

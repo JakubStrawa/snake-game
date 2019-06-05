@@ -13,11 +13,6 @@
 
 
 
-
-
-
-
-
 class Object{
 public:
     int x,y;
@@ -27,15 +22,6 @@ public:
     virtual void draw() = 0;
 };
 
-// Snake, d - direction
-class Snake {
-public:
-    int x,y,d;
-    
-    Snake() : x(0), y(0), d(0) {};
-    
-    
-};
 
 // Candy
 class Candy : public Object {
@@ -60,6 +46,17 @@ public:
                 window.draw(sprite);
             }
     }
+};
+
+
+// Snake, d - direction
+class Snake {
+public:
+    int x,y,d;
+    
+    Snake() : x(0), y(0), d(0) {};
+    
+    
 };
 
 #endif /* object_h */
