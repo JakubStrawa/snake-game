@@ -5,14 +5,14 @@
 //
 // This code will work only if you selected window, graphics and audio.
 //
-// Note that the "Run Script" build phase will copy the required frameworks
-// or dylibs to your application bundle so you can execute it on any OS X
-// computer.
+// In order to load the resources like cute_image.png, you have to set up
+// your target scheme:
 //
-// Your resource files (images, sounds, fonts, ...) are also copied to your
-// application bundle. To get the path to these resources, use the helper
-// function `resourcePath()` from ResourcePath.hpp
-//
+// - Select "Edit Scheme…" in the "Product" menu;
+// - Check the box "use custom working directory";
+// - Fill the text field with the folder path containing your resources;
+//        (e.g. your project folder)
+// - Click OK.
 //
 // TODO:
 //     + change textures - different cherry and snake, maybe background --- red is for candy
@@ -34,7 +34,7 @@
 //     + Funkcje wirtualne - klasa obiekt dla płytek z funk draw
 //     + Dziedziczenie - klasa główna obiekt, dziedziczące- tło, snake, candy
 //     + Wyjątki - może przechodzenie przez ściany, albo candy w snake'u, throw klase specjalną, może być pusta
-//      Testy jednostkowe - gettery, settery, przeliczanie pozycji
+//     + Testy jednostkowe - gettery, settery, przeliczanie pozycji
 //
 // BUGS/GLITCHES:
 //     + candy can spawn in snake
@@ -50,31 +50,34 @@
 //  RIGTH 2
 //  LEFT 1
 
-#include "ResourcePath.hpp"
 #include <SFML/Graphics.hpp>
 #include "functions.h"
+
 using namespace sf;
 
 
-int main()
-{
-    srand(time(0));
-    
-    Game* game = new Game();
-    
-    // Set the Icon
-    if (!icon.loadFromFile(resourcePath() + "snake.png")) {
-        return EXIT_FAILURE;
-    }
-    window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
-    
-    if (!font.loadFromFile(resourcePath() + "sansation.ttf")) {
-        return EXIT_FAILURE;
-    }
-    
-    gameLoop(*game);
-    
-    delete game;
-    
-    return 0;
-}
+ int main(){
+     
+ srand(time(0));
+ 
+ Game* game = new Game();
+ 
+ // Set the Icon
+ if (!icon.loadFromFile("Resources/snake.png")) {
+ return EXIT_FAILURE;
+ }
+ window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
+ 
+ if (!font.loadFromFile("Resources/sansation.ttf")) {
+ return EXIT_FAILURE;
+ }
+ 
+ gameLoop(*game);
+ 
+ delete game;
+ 
+ return 0;
+ }
+
+
+

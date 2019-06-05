@@ -14,5 +14,8 @@ private:
     int e;
 public:
     Exception (int val = 20) : e(val) {}
+    int get(){
+        return e;
+    }
 };
 #endif /* exception_h */

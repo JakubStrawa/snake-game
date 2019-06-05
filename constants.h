@@ -8,7 +8,6 @@
 
 #ifndef constants_h
 #define constants_h
-#include "ResourcePath.hpp"
 #include <SFML/Graphics.hpp>
 #define SIZE 32
 

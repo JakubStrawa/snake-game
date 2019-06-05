@@ -8,7 +8,6 @@
 
 #ifndef functions_h
 #define functions_h
-#include "ResourcePath.hpp"
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include "constants.h"
@@ -18,19 +17,19 @@ using namespace sf;
 
 
 
-void gameLoop(Game game){
+int gameLoop(Game game){
     
     // Load music to play
     Music music;
-    if (!music.openFromFile(resourcePath() + "Undertale - Megalovania.ogg")) {
+    if (!music.openFromFile("Resources/Undertale - Megalovania.ogg")) {
         return EXIT_FAILURE;
     }
     Music exit_music;
-    if (!exit_music.openFromFile(resourcePath() + "mario.ogg")) {
+    if (!exit_music.openFromFile("Resources/mario.ogg")) {
         return EXIT_FAILURE;
     }
     Music win_music;
-    if (!win_music.openFromFile(resourcePath() + "Mario Win.ogg")) {
+    if (!win_music.openFromFile("Resources/Mario Win.ogg")) {
         return EXIT_FAILURE;
     }
     
@@ -122,6 +121,7 @@ void gameLoop(Game game){
         
     }
 
+    return 0;
 }
 
 
