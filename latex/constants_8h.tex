@@ -1,0 +1,279 @@
+\section{constants.\+h File Reference}
+\label{constants_8h}\index{constants.h@{constants.h}}
+
+
+Definitions of constants.  
+
+
+{\ttfamily \#include $<$S\+F\+M\+L/\+Graphics.\+hpp$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ S\+I\+ZE}~32
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ directions} \{ \textbf{ down}, 
+\textbf{ left}, 
+\textbf{ right}, 
+\textbf{ up}
+ \}
+\begin{DoxyCompactList}\small\item\em Directions enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Render\+Window \textbf{ window} (sf\+::\+Video\+Mode(\textbf{ w}, \textbf{ h}), \char`\"{}Snake \textbf{ Game}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Sets the Window. \end{DoxyCompactList}\item 
+std\+::string \textbf{ convert} (int \textbf{ score})
+\begin{DoxyCompactList}\small\item\em int to string converter \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ N} =30
+\item 
+int \textbf{ M} =20
+\item 
+int \textbf{ w} = \textbf{ S\+I\+ZE}$\ast$\textbf{ N}
+\item 
+int \textbf{ h} = \textbf{ S\+I\+ZE}$\ast$\textbf{ M}
+\item 
+bool \textbf{ is\+Running} =true
+\item 
+bool \textbf{ game\+Win} =false
+\item 
+int \textbf{ score} = 0
+\item 
+float \textbf{ timer} =0
+\begin{DoxyCompactList}\small\item\em Clock timer. \end{DoxyCompactList}\item 
+float \textbf{ delay} =0.\+1
+\begin{DoxyCompactList}\small\item\em Clock delay between frames. \end{DoxyCompactList}\item 
+bool \textbf{ play\+End\+Music} = false
+\begin{DoxyCompactList}\small\item\em Bool to play exit music. \end{DoxyCompactList}\item 
+sf\+::\+Font \textbf{ font}
+\begin{DoxyCompactList}\small\item\em Loading font. \end{DoxyCompactList}\item 
+sf\+::\+Image \textbf{ icon}
+\begin{DoxyCompactList}\small\item\em Loading game icon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Definitions of constants. 
+
+File contains constatns such as width, height bool is\+Running, play\+End\+Music and game\+Win int score and two clock floats 
+
+\subsection{Macro Definition Documentation}
+\mbox{\label{constants_8h_a70ed59adcb4159ac551058053e649640}} 
+\index{constants.h@{constants.h}!SIZE@{SIZE}}
+\index{SIZE@{SIZE}!constants.h@{constants.h}}
+\subsubsection{SIZE}
+{\footnotesize\ttfamily \#define S\+I\+ZE~32}
+
+
+
+Definition at line 12 of file constants.\+h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\label{constants_8h_a94c73cf6934fd835103f0f2794071ee9}} 
+\index{constants.h@{constants.h}!directions@{directions}}
+\index{directions@{directions}!constants.h@{constants.h}}
+\subsubsection{directions}
+{\footnotesize\ttfamily enum \textbf{ directions}}
+
+
+
+Directions enum. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{down@{down}!constants.h@{constants.h}}\index{constants.h@{constants.h}!down@{down}}}\mbox{\label{constants_8h_a94c73cf6934fd835103f0f2794071ee9a00156fc42b17a87d0746d97b42caf296}} 
+down&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{left@{left}!constants.h@{constants.h}}\index{constants.h@{constants.h}!left@{left}}}\mbox{\label{constants_8h_a94c73cf6934fd835103f0f2794071ee9ab0ac36b187aa60c167ffcead3d5a03c0}} 
+left&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{right@{right}!constants.h@{constants.h}}\index{constants.h@{constants.h}!right@{right}}}\mbox{\label{constants_8h_a94c73cf6934fd835103f0f2794071ee9af763d610923b0c4614e8ecd65212666a}} 
+right&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{up@{up}!constants.h@{constants.h}}\index{constants.h@{constants.h}!up@{up}}}\mbox{\label{constants_8h_a94c73cf6934fd835103f0f2794071ee9aebc281bf093563220c2270ba57dedfce}} 
+up&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 25 of file constants.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\label{constants_8h_ad929726cad6c578c21e6cbe901b960f3}} 
+\index{constants.h@{constants.h}!convert@{convert}}
+\index{convert@{convert}!constants.h@{constants.h}}
+\subsubsection{convert()}
+{\footnotesize\ttfamily std\+::string convert (\begin{DoxyParamCaption}\item[{int}]{score }\end{DoxyParamCaption})}
+
+
+
+int to string converter 
+
+
+
+Definition at line 70 of file constants.\+h.
+
+\mbox{\label{constants_8h_a9303a06fb4c20412a9ee96fdbaecfafc}} 
+\index{constants.h@{constants.h}!window@{window}}
+\index{window@{window}!constants.h@{constants.h}}
+\subsubsection{window()}
+{\footnotesize\ttfamily sf\+::\+Render\+Window window (\begin{DoxyParamCaption}\item[{sf\+::\+Video\+Mode(\textbf{ w}, \textbf{ h})}]{,  }\item[{\char`\"{}Snake \textbf{ Game}\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Sets the Window. 
+
+
+
+\subsection{Variable Documentation}
+\mbox{\label{constants_8h_abdc33cf25e725134a9b48e79c7031bcf}} 
+\index{constants.h@{constants.h}!delay@{delay}}
+\index{delay@{delay}!constants.h@{constants.h}}
+\subsubsection{delay}
+{\footnotesize\ttfamily float delay =0.\+1}
+
+
+
+Clock delay between frames. 
+
+
+
+Definition at line 44 of file constants.\+h.
+
+\mbox{\label{constants_8h_a6d354835cad461f09999bfceea320fc5}} 
+\index{constants.h@{constants.h}!font@{font}}
+\index{font@{font}!constants.h@{constants.h}}
+\subsubsection{font}
+{\footnotesize\ttfamily sf\+::\+Font font}
+
+
+
+Loading font. 
+
+
+
+Definition at line 60 of file constants.\+h.
+
+\mbox{\label{constants_8h_ac8ee1501d37cb1b4ac45af679605dc2e}} 
+\index{constants.h@{constants.h}!gameWin@{gameWin}}
+\index{gameWin@{gameWin}!constants.h@{constants.h}}
+\subsubsection{gameWin}
+{\footnotesize\ttfamily bool game\+Win =false}
+
+
+
+Definition at line 34 of file constants.\+h.
+
+\mbox{\label{constants_8h_a16611451551e3d15916bae723c3f59f7}} 
+\index{constants.h@{constants.h}!h@{h}}
+\index{h@{h}!constants.h@{constants.h}}
+\subsubsection{h}
+{\footnotesize\ttfamily int h = \textbf{ S\+I\+ZE}$\ast$\textbf{ M}}
+
+
+
+Definition at line 32 of file constants.\+h.
+
+\mbox{\label{constants_8h_a91480013f141def3e514aff786b3e10c}} 
+\index{constants.h@{constants.h}!icon@{icon}}
+\index{icon@{icon}!constants.h@{constants.h}}
+\subsubsection{icon}
+{\footnotesize\ttfamily sf\+::\+Image icon}
+
+
+
+Loading game icon. 
+
+
+
+Definition at line 64 of file constants.\+h.
+
+\mbox{\label{constants_8h_a35e1fbda907c4c69651e7ffed1543106}} 
+\index{constants.h@{constants.h}!isRunning@{isRunning}}
+\index{isRunning@{isRunning}!constants.h@{constants.h}}
+\subsubsection{isRunning}
+{\footnotesize\ttfamily bool is\+Running =true}
+
+
+
+Definition at line 33 of file constants.\+h.
+
+\mbox{\label{constants_8h_a5e78dbd5fd0fc01ba7b98dd15e27221e}} 
+\index{constants.h@{constants.h}!M@{M}}
+\index{M@{M}!constants.h@{constants.h}}
+\subsubsection{M}
+{\footnotesize\ttfamily int M =20}
+
+
+
+Definition at line 30 of file constants.\+h.
+
+\mbox{\label{constants_8h_a7722c8ecbb62d99aee7ce68b1752f337}} 
+\index{constants.h@{constants.h}!N@{N}}
+\index{N@{N}!constants.h@{constants.h}}
+\subsubsection{N}
+{\footnotesize\ttfamily int N =30}
+
+
+
+Definition at line 30 of file constants.\+h.
+
+\mbox{\label{constants_8h_a6721cf32148dffc76987c66cf66711a4}} 
+\index{constants.h@{constants.h}!playEndMusic@{playEndMusic}}
+\index{playEndMusic@{playEndMusic}!constants.h@{constants.h}}
+\subsubsection{playEndMusic}
+{\footnotesize\ttfamily bool play\+End\+Music = false}
+
+
+
+Bool to play exit music. 
+
+
+
+Definition at line 49 of file constants.\+h.
+
+\mbox{\label{constants_8h_aef160b7437d94056f1dc59646cd5b87d}} 
+\index{constants.h@{constants.h}!score@{score}}
+\index{score@{score}!constants.h@{constants.h}}
+\subsubsection{score}
+{\footnotesize\ttfamily int score = 0}
+
+
+
+Definition at line 35 of file constants.\+h.
+
+\mbox{\label{constants_8h_abb8bd4fceff21f1beaf39e2aba94840a}} 
+\index{constants.h@{constants.h}!timer@{timer}}
+\index{timer@{timer}!constants.h@{constants.h}}
+\subsubsection{timer}
+{\footnotesize\ttfamily float timer =0}
+
+
+
+Clock timer. 
+
+
+
+Definition at line 40 of file constants.\+h.
+
+\mbox{\label{constants_8h_aac374e320caaadeca4874add33b62af2}} 
+\index{constants.h@{constants.h}!w@{w}}
+\index{w@{w}!constants.h@{constants.h}}
+\subsubsection{w}
+{\footnotesize\ttfamily int w = \textbf{ S\+I\+ZE}$\ast$\textbf{ N}}
+
+
+
+Definition at line 31 of file constants.\+h.
+

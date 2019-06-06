@@ -1,0 +1,499 @@
+\section{Game Class Reference}
+\label{class_game}\index{Game@{Game}}
+
+
+\doxyref{Game}{p.}{class_game} class definition.  
+
+
+
+
+{\ttfamily \#include $<$game.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Game} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Game}{p.}{class_game} constructor. \end{DoxyCompactList}\item 
+\textbf{ $\sim$\+Game} ()=default
+\begin{DoxyCompactList}\small\item\em \doxyref{Game}{p.}{class_game} default destructor. \end{DoxyCompactList}\item 
+int \textbf{ get\+Dir} ()
+\begin{DoxyCompactList}\small\item\em dir value getter \end{DoxyCompactList}\item 
+int \textbf{ get\+Num} ()
+\begin{DoxyCompactList}\small\item\em num value getter \end{DoxyCompactList}\item 
+void \textbf{ set\+Dir} (int x)
+\begin{DoxyCompactList}\small\item\em dir value setter \end{DoxyCompactList}\item 
+void \textbf{ set\+Num} (int x)
+\begin{DoxyCompactList}\small\item\em num value setter \end{DoxyCompactList}\item 
+void \textbf{ increase\+Num} ()
+\begin{DoxyCompactList}\small\item\em num value incrementator \end{DoxyCompactList}\item 
+void \textbf{ set\+Textures} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Snake}{p.}{class_snake}, \doxyref{Candy}{p.}{class_candy} and \doxyref{Background}{p.}{class_background} texture loader. \end{DoxyCompactList}\item 
+void \textbf{ set\+Sprites} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Snake}{p.}{class_snake}, \doxyref{Candy}{p.}{class_candy} and \doxyref{Background}{p.}{class_background} sprite loader. \end{DoxyCompactList}\item 
+bool \textbf{ check\+Candy\+Pos} ()
+\begin{DoxyCompactList}\small\item\em Function checks if candy spawn position is outside snake. \end{DoxyCompactList}\item 
+void \textbf{ Move} ()
+\begin{DoxyCompactList}\small\item\em Move function. \end{DoxyCompactList}\item 
+void \textbf{ check\+Keyborad} ()
+\begin{DoxyCompactList}\small\item\em Function checks if keys are pressed. \end{DoxyCompactList}\item 
+void \textbf{ draw\+Snake} ()
+\begin{DoxyCompactList}\small\item\em Function drawing \doxyref{Snake}{p.}{class_snake}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Snake} \textbf{ s} [600]
+\begin{DoxyCompactList}\small\item\em \doxyref{Snake}{p.}{class_snake} table of objects. \end{DoxyCompactList}\item 
+Texture \textbf{ t\+\_\+bg}
+\begin{DoxyCompactList}\small\item\em Texture of \doxyref{Background}{p.}{class_background}. \end{DoxyCompactList}\item 
+Texture \textbf{ t\+\_\+candy}
+\begin{DoxyCompactList}\small\item\em Texture of \doxyref{Candy}{p.}{class_candy}. \end{DoxyCompactList}\item 
+Texture \textbf{ t\+\_\+s\+\_\+body}
+\begin{DoxyCompactList}\small\item\em Texture of \doxyref{Snake}{p.}{class_snake} body. \end{DoxyCompactList}\item 
+Texture \textbf{ t\+\_\+s\+\_\+head}
+\begin{DoxyCompactList}\small\item\em Texture of \doxyref{Snake}{p.}{class_snake} head. \end{DoxyCompactList}\item 
+Texture \textbf{ t\+\_\+s\+\_\+tail}
+\begin{DoxyCompactList}\small\item\em Texture of \doxyref{Snake}{p.}{class_snake} tail. \end{DoxyCompactList}\item 
+Texture \textbf{ t\+\_\+s\+\_\+corner}
+\begin{DoxyCompactList}\small\item\em Texture of \doxyref{Snake}{p.}{class_snake} corner. \end{DoxyCompactList}\item 
+\textbf{ Candy} \textbf{ c}
+\begin{DoxyCompactList}\small\item\em \doxyref{Candy}{p.}{class_candy} instance. \end{DoxyCompactList}\item 
+\textbf{ Background} \textbf{ bg}
+\begin{DoxyCompactList}\small\item\em \doxyref{Background}{p.}{class_background} instance. \end{DoxyCompactList}\item 
+Sprite \textbf{ snake\+\_\+body}
+\begin{DoxyCompactList}\small\item\em \doxyref{Snake}{p.}{class_snake} body sprite. \end{DoxyCompactList}\item 
+Sprite \textbf{ snake\+\_\+corner}
+\begin{DoxyCompactList}\small\item\em \doxyref{Snake}{p.}{class_snake} corner sprite. \end{DoxyCompactList}\item 
+Sprite \textbf{ snake\+\_\+head}
+\begin{DoxyCompactList}\small\item\em \doxyref{Snake}{p.}{class_snake} head sprite. \end{DoxyCompactList}\item 
+Sprite \textbf{ snake\+\_\+tail}
+\begin{DoxyCompactList}\small\item\em \doxyref{Snake}{p.}{class_snake} tail sprite. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ dir} =0
+\begin{DoxyCompactList}\small\item\em direction of \doxyref{Snake}{p.}{class_snake}\textquotesingle{}s head \end{DoxyCompactList}\item 
+int \textbf{ num}
+\begin{DoxyCompactList}\small\item\em \doxyref{Snake}{p.}{class_snake} length. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Game}{p.}{class_game} class definition. 
+
+Definition of \doxyref{Game}{p.}{class_game} class and its methods. 
+
+Definition at line 29 of file game.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_game_ad59df6562a58a614fda24622d3715b65}} 
+\index{Game@{Game}!Game@{Game}}
+\index{Game@{Game}!Game@{Game}}
+\subsubsection{Game()}
+{\footnotesize\ttfamily Game\+::\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxyref{Game}{p.}{class_game} constructor. 
+
+
+
+Definition at line 95 of file game.\+h.
+
+\mbox{\label{class_game_a3d09cd0b68ef69107d36360ca903e023}} 
+\index{Game@{Game}!````~Game@{$\sim$Game}}
+\index{````~Game@{$\sim$Game}!Game@{Game}}
+\subsubsection{$\sim$Game()}
+{\footnotesize\ttfamily Game\+::$\sim$\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxyref{Game}{p.}{class_game} default destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_game_a5a1e43e5572e48060c0cf856c4a1dd30}} 
+\index{Game@{Game}!checkCandyPos@{checkCandyPos}}
+\index{checkCandyPos@{checkCandyPos}!Game@{Game}}
+\subsubsection{checkCandyPos()}
+{\footnotesize\ttfamily bool Game\+::check\+Candy\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Function checks if candy spawn position is outside snake. 
+
+
+
+Definition at line 159 of file game.\+h.
+
+\mbox{\label{class_game_a71b265f2c46fdb63f2a0f8d7f1f153dc}} 
+\index{Game@{Game}!checkKeyborad@{checkKeyborad}}
+\index{checkKeyborad@{checkKeyborad}!Game@{Game}}
+\subsubsection{checkKeyborad()}
+{\footnotesize\ttfamily void Game\+::check\+Keyborad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Function checks if keys are pressed. 
+
+
+
+Definition at line 252 of file game.\+h.
+
+\mbox{\label{class_game_aea7b528c097d4d16ad409e73b5df9a6e}} 
+\index{Game@{Game}!drawSnake@{drawSnake}}
+\index{drawSnake@{drawSnake}!Game@{Game}}
+\subsubsection{drawSnake()}
+{\footnotesize\ttfamily void Game\+::draw\+Snake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Function drawing \doxyref{Snake}{p.}{class_snake}. 
+
+\doxyref{Snake}{p.}{class_snake} head drawing
+
+\doxyref{Snake}{p.}{class_snake} tail drawing
+
+\doxyref{Snake}{p.}{class_snake} left/right drawing
+
+\doxyref{Snake}{p.}{class_snake} up/down drawing
+
+Definition at line 273 of file game.\+h.
+
+\mbox{\label{class_game_a3d56a6ee2bf2b48a3f0abe009186866d}} 
+\index{Game@{Game}!getDir@{getDir}}
+\index{getDir@{getDir}!Game@{Game}}
+\subsubsection{getDir()}
+{\footnotesize\ttfamily int Game\+::get\+Dir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+dir value getter 
+
+
+
+Definition at line 104 of file game.\+h.
+
+\mbox{\label{class_game_a5a55d1f31cf44c8bfb2bdbefb5864943}} 
+\index{Game@{Game}!getNum@{getNum}}
+\index{getNum@{getNum}!Game@{Game}}
+\subsubsection{getNum()}
+{\footnotesize\ttfamily int Game\+::get\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+num value getter 
+
+
+
+Definition at line 110 of file game.\+h.
+
+\mbox{\label{class_game_a1fdbddfa15d53d20628fdb2340de05c2}} 
+\index{Game@{Game}!increaseNum@{increaseNum}}
+\index{increaseNum@{increaseNum}!Game@{Game}}
+\subsubsection{increaseNum()}
+{\footnotesize\ttfamily void Game\+::increase\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+num value incrementator 
+
+
+
+Definition at line 128 of file game.\+h.
+
+\mbox{\label{class_game_a5bfa8b1a7d8b77ebb3a1555d92e6ea0f}} 
+\index{Game@{Game}!Move@{Move}}
+\index{Move@{Move}!Game@{Game}}
+\subsubsection{Move()}
+{\footnotesize\ttfamily void Game\+::\+Move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Move function. 
+
+\doxyref{Exception}{p.}{class_exception} use for out-\/of-\/bounds movement
+
+Movement through walls
+
+Eating and spawning candy
+
+\doxyref{Snake}{p.}{class_snake} eating itself
+
+Definition at line 171 of file game.\+h.
+
+\mbox{\label{class_game_a0855f49522de325d7cb1ce0ae45fd58d}} 
+\index{Game@{Game}!setDir@{setDir}}
+\index{setDir@{setDir}!Game@{Game}}
+\subsubsection{setDir()}
+{\footnotesize\ttfamily void Game\+::set\+Dir (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+dir value setter 
+
+
+
+Definition at line 116 of file game.\+h.
+
+\mbox{\label{class_game_a7d5afdf91792e12e66ca8702ca2463b6}} 
+\index{Game@{Game}!setNum@{setNum}}
+\index{setNum@{setNum}!Game@{Game}}
+\subsubsection{setNum()}
+{\footnotesize\ttfamily void Game\+::set\+Num (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+num value setter 
+
+
+
+Definition at line 122 of file game.\+h.
+
+\mbox{\label{class_game_ade94b37f782aefaed85309c8407472bc}} 
+\index{Game@{Game}!setSprites@{setSprites}}
+\index{setSprites@{setSprites}!Game@{Game}}
+\subsubsection{setSprites()}
+{\footnotesize\ttfamily void Game\+::set\+Sprites (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxyref{Snake}{p.}{class_snake}, \doxyref{Candy}{p.}{class_candy} and \doxyref{Background}{p.}{class_background} sprite loader. 
+
+
+
+Definition at line 147 of file game.\+h.
+
+\mbox{\label{class_game_a8d06844bc4be3c5c66dce3aa88aeeb78}} 
+\index{Game@{Game}!setTextures@{setTextures}}
+\index{setTextures@{setTextures}!Game@{Game}}
+\subsubsection{setTextures()}
+{\footnotesize\ttfamily void Game\+::set\+Textures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxyref{Snake}{p.}{class_snake}, \doxyref{Candy}{p.}{class_candy} and \doxyref{Background}{p.}{class_background} texture loader. 
+
+
+
+Definition at line 135 of file game.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_game_af30b158fbf64eb8ddb7cbffa1a62e0fb}} 
+\index{Game@{Game}!bg@{bg}}
+\index{bg@{bg}!Game@{Game}}
+\subsubsection{bg}
+{\footnotesize\ttfamily \textbf{ Background} Game\+::bg}
+
+
+
+\doxyref{Background}{p.}{class_background} instance. 
+
+
+
+Definition at line 75 of file game.\+h.
+
+\mbox{\label{class_game_add533ac6eb6d4eb26f564330f61c349e}} 
+\index{Game@{Game}!c@{c}}
+\index{c@{c}!Game@{Game}}
+\subsubsection{c}
+{\footnotesize\ttfamily \textbf{ Candy} Game\+::c}
+
+
+
+\doxyref{Candy}{p.}{class_candy} instance. 
+
+
+
+Definition at line 71 of file game.\+h.
+
+\mbox{\label{class_game_a88da471c1732b0cc78ef484a5796c79c}} 
+\index{Game@{Game}!dir@{dir}}
+\index{dir@{dir}!Game@{Game}}
+\subsubsection{dir}
+{\footnotesize\ttfamily int Game\+::dir =0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+direction of \doxyref{Snake}{p.}{class_snake}\textquotesingle{}s head 
+
+
+
+Definition at line 34 of file game.\+h.
+
+\mbox{\label{class_game_a594f719c6e3b4286fbfe552397b322ef}} 
+\index{Game@{Game}!num@{num}}
+\index{num@{num}!Game@{Game}}
+\subsubsection{num}
+{\footnotesize\ttfamily int Game\+::num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxyref{Snake}{p.}{class_snake} length. 
+
+
+
+Definition at line 38 of file game.\+h.
+
+\mbox{\label{class_game_a378725a410aa236b3ebe923294f526cf}} 
+\index{Game@{Game}!s@{s}}
+\index{s@{s}!Game@{Game}}
+\subsubsection{s}
+{\footnotesize\ttfamily \textbf{ Snake} Game\+::s[600]}
+
+
+
+\doxyref{Snake}{p.}{class_snake} table of objects. 
+
+
+
+Definition at line 43 of file game.\+h.
+
+\mbox{\label{class_game_afd6977f5a52959ea24acf2b34ca545a4}} 
+\index{Game@{Game}!snake\_body@{snake\_body}}
+\index{snake\_body@{snake\_body}!Game@{Game}}
+\subsubsection{snake\_body}
+{\footnotesize\ttfamily Sprite Game\+::snake\+\_\+body}
+
+
+
+\doxyref{Snake}{p.}{class_snake} body sprite. 
+
+
+
+Definition at line 79 of file game.\+h.
+
+\mbox{\label{class_game_a3d66d41db50fcfdd99c62c2abee52c6e}} 
+\index{Game@{Game}!snake\_corner@{snake\_corner}}
+\index{snake\_corner@{snake\_corner}!Game@{Game}}
+\subsubsection{snake\_corner}
+{\footnotesize\ttfamily Sprite Game\+::snake\+\_\+corner}
+
+
+
+\doxyref{Snake}{p.}{class_snake} corner sprite. 
+
+
+
+Definition at line 83 of file game.\+h.
+
+\mbox{\label{class_game_ab394583f1a5d8203a2eff3fd089032e0}} 
+\index{Game@{Game}!snake\_head@{snake\_head}}
+\index{snake\_head@{snake\_head}!Game@{Game}}
+\subsubsection{snake\_head}
+{\footnotesize\ttfamily Sprite Game\+::snake\+\_\+head}
+
+
+
+\doxyref{Snake}{p.}{class_snake} head sprite. 
+
+
+
+Definition at line 87 of file game.\+h.
+
+\mbox{\label{class_game_a6c60be1aa708017fb417fc9dc2f61b27}} 
+\index{Game@{Game}!snake\_tail@{snake\_tail}}
+\index{snake\_tail@{snake\_tail}!Game@{Game}}
+\subsubsection{snake\_tail}
+{\footnotesize\ttfamily Sprite Game\+::snake\+\_\+tail}
+
+
+
+\doxyref{Snake}{p.}{class_snake} tail sprite. 
+
+
+
+Definition at line 91 of file game.\+h.
+
+\mbox{\label{class_game_a7ca5b0a32e79ab4e7547e3936b8a23c9}} 
+\index{Game@{Game}!t\_bg@{t\_bg}}
+\index{t\_bg@{t\_bg}!Game@{Game}}
+\subsubsection{t\_bg}
+{\footnotesize\ttfamily Texture Game\+::t\+\_\+bg}
+
+
+
+Texture of \doxyref{Background}{p.}{class_background}. 
+
+
+
+Definition at line 47 of file game.\+h.
+
+\mbox{\label{class_game_a647d40043587a105e864d6529842c6b6}} 
+\index{Game@{Game}!t\_candy@{t\_candy}}
+\index{t\_candy@{t\_candy}!Game@{Game}}
+\subsubsection{t\_candy}
+{\footnotesize\ttfamily Texture Game\+::t\+\_\+candy}
+
+
+
+Texture of \doxyref{Candy}{p.}{class_candy}. 
+
+
+
+Definition at line 51 of file game.\+h.
+
+\mbox{\label{class_game_a86fa18714a711c07a7a7fb935139283b}} 
+\index{Game@{Game}!t\_s\_body@{t\_s\_body}}
+\index{t\_s\_body@{t\_s\_body}!Game@{Game}}
+\subsubsection{t\_s\_body}
+{\footnotesize\ttfamily Texture Game\+::t\+\_\+s\+\_\+body}
+
+
+
+Texture of \doxyref{Snake}{p.}{class_snake} body. 
+
+
+
+Definition at line 55 of file game.\+h.
+
+\mbox{\label{class_game_a5b1fe9d8dc7791a40a7e77bdc626ca29}} 
+\index{Game@{Game}!t\_s\_corner@{t\_s\_corner}}
+\index{t\_s\_corner@{t\_s\_corner}!Game@{Game}}
+\subsubsection{t\_s\_corner}
+{\footnotesize\ttfamily Texture Game\+::t\+\_\+s\+\_\+corner}
+
+
+
+Texture of \doxyref{Snake}{p.}{class_snake} corner. 
+
+
+
+Definition at line 67 of file game.\+h.
+
+\mbox{\label{class_game_a626cec5143804118770f2e04f73678e6}} 
+\index{Game@{Game}!t\_s\_head@{t\_s\_head}}
+\index{t\_s\_head@{t\_s\_head}!Game@{Game}}
+\subsubsection{t\_s\_head}
+{\footnotesize\ttfamily Texture Game\+::t\+\_\+s\+\_\+head}
+
+
+
+Texture of \doxyref{Snake}{p.}{class_snake} head. 
+
+
+
+Definition at line 59 of file game.\+h.
+
+\mbox{\label{class_game_a38190f95848fbec92b1b7742b1d0c72e}} 
+\index{Game@{Game}!t\_s\_tail@{t\_s\_tail}}
+\index{t\_s\_tail@{t\_s\_tail}!Game@{Game}}
+\subsubsection{t\_s\_tail}
+{\footnotesize\ttfamily Texture Game\+::t\+\_\+s\+\_\+tail}
+
+
+
+Texture of \doxyref{Snake}{p.}{class_snake} tail. 
+
+
+
+Definition at line 63 of file game.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ game.\+h}\end{DoxyCompactItemize}
