@@ -15,46 +15,80 @@
 
 using namespace sf;
 
+/*!
+ * \file
+ * \brief Game loop function file
+ *
+ * Definition of entire gameLoop function
+ */
 
-
+/*!
+ * \brief Main game loop
+ */
 int gameLoop(Game game){
     
-    // Load music to play
+    /*!
+     * \brief Load music to play - main theme, loss and win sounds
+     */
     Music music;
     if (!music.openFromFile("Resources/Undertale - Megalovania.ogg")) {
         return EXIT_FAILURE;
     }
+    /*!
+     * \brief Load music to play - main theme, loss and win sounds
+     */
     Music exit_music;
     if (!exit_music.openFromFile("Resources/mario.ogg")) {
         return EXIT_FAILURE;
     }
+    /*!
+     * \brief Load music to play - main theme, loss and win sounds
+     */
     Music win_music;
     if (!win_music.openFromFile("Resources/Mario Win.ogg")) {
         return EXIT_FAILURE;
     }
     
-    // Play the music
+    /*!
+     * \brief Play the music
+     */
     music.play();
     
-    // Set the Textures
+    /*!
+     * \brief Set the Textures
+     */
     game.setTextures();
     
-    // Set the sprites
+    /*!
+     * \brief Set the sprites
+     */
     game.setSprites();
     
-    // Spawning first candy
+    /*!
+     * \brief Spawning first candy
+     */
     game.c.spawnFirst();
 
-    // Set the Clock
+    /*!
+     * \brief Creating clock
+     */
     Clock clock;
     
+    /*!
+     * \brief MAIN loop
+     */
     while (window.isOpen())
     {
-        
+        /*!
+         * \brief counting elapsed time
+         */
         float time = clock.getElapsedTime().asSeconds();
         clock.restart();
         timer+=time;
         
+        /*!
+         * \brief event to check if user wants to quit
+         */
         Event e;
         while (window.pollEvent(e))
         {
@@ -67,29 +101,41 @@ int gameLoop(Game game){
                 window.close();
             }
         }
+        /*!
+         * \brief checking if keys are pressed
+         */
         if (isRunning) {
             game.checkKeyborad();
         }
         
-        //  Drawing game
+        /*!
+         * \brief Drawing background, candy and snake
+         */
         window.clear();
-
         game.bg.draw();
         game.c.draw();
         game.drawSnake();
 
-        
+        /*!
+         * \brief displaying score
+         */
         Text text("Score: " + convert(score), font, 30);
         text.setFillColor(Color::Black);
         window.draw(text);
         
-        if (score > 100 && isRunning) {
+        /*!
+         * \brief win conditions
+         */
+        if (score > 1000 && isRunning) {
             music.pause();
             win_music.play();
             isRunning = false;
             gameWin = true;
         }
         
+        /*!
+         * \brief win text display
+         */
         if (!isRunning && gameWin) {
             Text exitText("You Win!", font, 50);
             exitText.setPosition(230, 214);
@@ -101,6 +147,9 @@ int gameLoop(Game game){
             window.draw(exitText);
         }
         
+        /*!
+         * \brief loss text display
+         */
         if (!isRunning && !gameWin) {
             music.pause();
             if (playEndMusic == false) {

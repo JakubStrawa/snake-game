@@ -12,6 +12,13 @@
 #define TWOBLUECUBES_SINGLE_INCLUDE_CATCH_HPP_INCLUDED
 // start catch.hpp
 
+/*!
+ * \file
+ * \brief Unit Tests Framework file
+ *
+ * File contains unit tests framework.
+ * Not part of Snake Game itself.
+ */
 
 #define CATCH_VERSION_MAJOR 2
 #define CATCH_VERSION_MINOR 7
