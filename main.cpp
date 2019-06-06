@@ -14,23 +14,39 @@
 
 using namespace sf;
 
+/*!
+ * \file
+ * \brief Main file
+ *
+ * Main includes creating Game class instance, loading icon and font from files
+ * and entering game loop
+ */
 
  int main(){
      
  srand(time(0));
- 
+/*!
+* \brief New Game class instance
+*/
  Game* game = new Game();
  
- // Set the Icon
+/*!
+* \brief Set the Icon
+*/
  if (!icon.loadFromFile("Resources/snake.png")) {
  return EXIT_FAILURE;
  }
  window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
  
+/*!
+* \brief Loading Font
+*/
  if (!font.loadFromFile("Resources/sansation.ttf")) {
  return EXIT_FAILURE;
  }
- 
+/*!
+* \brief Main game loop
+*/
  gameLoop(*game);
  
  delete game;

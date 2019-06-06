@@ -11,12 +11,22 @@
 #include <SFML/Graphics.hpp>
 #define SIZE 32
 
-
+/*!
+ * \file
+ * \brief Definitions of constants
+ *
+ * File contains constatns such as width, height
+ * bool isRunning, playEndMusic and gameWin
+ * int score and two clock floats
+ */
+/*!
+ * \brief Directions enum
+ */
 enum directions {down, left, right, up};
 
 
 
-// width and height, size of textures
+// width and height, size of textures, score
 int N=30,M=20;
 int w = SIZE*N;
 int h = SIZE*M;
@@ -24,23 +34,39 @@ bool isRunning=true;
 bool gameWin=false;
 int score = 0;
 
-// Clock timer and delay between frames
-float timer=0, delay=0.1;
+/*!
+ * \brief Clock timer
+ */
+float timer=0;
+/*!
+ * \brief Clock delay between frames
+ */
+float delay=0.1;
 
-// Bool to play exit music
+/*!
+ * \brief Bool to play exit music
+ */
 bool playEndMusic = false;
 
 
-// Set the Window
+/*!
+ * \brief Sets the Window
+ */
 sf::RenderWindow window(sf::VideoMode(w, h), "Snake Game");
 
-// Create a graphical text to display
+/*!
+ * \brief Loading font
+ */
 sf::Font font;
-
+/*!
+ * \brief Loading game icon
+ */
 sf::Image icon;
 
 
-//  int to string converter
+/*!
+ * \brief int to string converter
+ */
 std::string convert (int score){
     std::string s_score = std::to_string(score);
     return s_score;
